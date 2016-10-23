@@ -6,6 +6,8 @@ Vagrant.configure(2) do |config|
     ubuntu.vm.hostname = "aszone.com"
   
     ubuntu.vm.synced_folder ".", "/var/www"
-
+    ubuntu.vm.provision "shell" do |s|
+       s.path = "vagrant/setup.sh"
+    end
   end
 end
